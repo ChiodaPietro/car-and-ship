@@ -79,6 +79,9 @@ public class Car extends Vehicle{
                 Rear_Brakes.Brakes_consumption(50);
                 super.setSpeed(0);
             }
+            if(Front_Brakes.getLongevity()<=0||Rear_Brakes.getLongevity()<=0){
+                throw new BrakesBrokenException("Brakes consumed");
+            }
         }else {
             super.onoff();
             System.out.println("car just turned on");
